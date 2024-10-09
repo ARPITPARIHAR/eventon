@@ -78,7 +78,7 @@
                             <td>{{ $participation->number }}</td>
                             <td>{{ $participation->age }}</td>
                             <td>{{ $participation->category }}</td>
-                            <td>{{ $participation->link }}</td>
+                            <td>{{ $participation->video }}</td>
                             <td>{{ $participation->message }}</td>
                             <td>
                                 <!-- Delete Button Triggering Modal -->

@@ -11,7 +11,8 @@ class FormController extends Controller
     public function submit(Request $request)
     {
         // Debugging: Check incoming request data
-        // dd($request->all());
+        //   dd($request->all());
+
 
         // Create a new Form instance
         $buyer = new Form;
@@ -31,8 +32,28 @@ class FormController extends Controller
             return back()->withErrors(['game_category' => 'Please select a category.']);
         }
 
+        if ($request->file('logo')) {
+            // Get original file name without extension
+            $originalName = pathinfo($request->file('logo')->getClientOriginalName(), PATHINFO_FILENAME);
+
+            // Create a new file name by combining current timestamp and original name
+            $fileName = time() . '-logo-' . $originalName;
+
+            // Debugging to check the file name
+            // dd($fileName);
+
+            // Store the file and get the path
+            $filePath = $request->file('logo')->storeAs('uploads/video', $fileName, 'public');
+
+            // Debugging to check the file path
+            // dd($filePath);
+
+            // Store the video path in the database
+            $buyer->video = '/public/storage/' . $filePath;
+        }
+
         // Additional fields
-        $buyer->link = $request->link;
+
         $buyer->message = $request->message;
 
         // Save the Form model

@@ -175,7 +175,7 @@
         <div class="col-lg-8">'
             <div class="participation-form-container">
                 <h class="participation-form-heading">Participate & Win Amazing Rewards!</h>
-                <form action="{{ route('form.submit') }}" method="POST"  >
+                <form action="{{ route('form.submit') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
 
@@ -236,9 +236,10 @@
 
 
                     <div class="form-group">
-                        <label for="video Link"> Your Gaming Video Link:</label>
-                        <input type="text" class="form-control" name="link" id="video" placeholder="Gaming Video Link"  required>
+                        <label for="video">Your Gaming Video:</label>
+                        <input type="file" class="form-control" name="logo" id="video" placeholder="Gaming Video" required>
                     </div>
+
                     <div class="form-group">
                         <label for="message">Additional Information:</label>
                         <textarea class="form-control" id="message"name="message" rows="4" placeholder="Any additional information or comments" required></textarea>
