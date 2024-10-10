@@ -141,8 +141,9 @@
                                         <input type="text" class="form-control" name="custom_game_category" id="custom_category" placeholder="Enter your category">
                                     </div>
                                     <div class="form-group">
-                                        <label for="video">Your Gaming Video Link:</label>
-                                        <input type="text" class="form-control" name="link" id="video" placeholder="Gaming Video Link" required>
+                                        <label for="video">Your Gaming Video:</label>
+                                        <input type="file" class="form-control" name="logo" id="video" placeholder="Gaming Video" required
+                                               style="background-color: white;  color: black;">
                                     </div>
                                     <div class="form-group">
                                         <label for="message">Additional Information:</label>

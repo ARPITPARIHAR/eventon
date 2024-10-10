@@ -64,7 +64,7 @@
                         <th>Contact</th>
                         <th>Age group</th>
                         <th>Video Category</th>
-                        <th>Video Link</th>
+                        <th>Video</th>
                         <th>Message</th>
                         <th>Actions</th>
                     </tr>
@@ -78,7 +78,13 @@
                             <td>{{ $participation->number }}</td>
                             <td>{{ $participation->age }}</td>
                             <td>{{ $participation->category }}</td>
-                            <td>{{ $participation->video }}</td>
+                     <td>
+    <video width="90" controls>
+        <source src="{{ asset($participation->video) }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</td>
+
                             <td>{{ $participation->message }}</td>
                             <td>
                                 <!-- Delete Button Triggering Modal -->

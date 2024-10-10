@@ -235,10 +235,12 @@
 
 
 
-                    <div class="form-group">
-                        <label for="video">Your Gaming Video:</label>
-                        <input type="file" class="form-control" name="logo" id="video" placeholder="Gaming Video" required>
-                    </div>
+<div class="form-group">
+    <label for="video">Your Gaming Video:</label>
+    <input type="file" class="form-control" name="logo" id="video" placeholder="Gaming Video" required
+           style="background-color: white;  color: black;">
+</div>
+
 
                     <div class="form-group">
                         <label for="message">Additional Information:</label>

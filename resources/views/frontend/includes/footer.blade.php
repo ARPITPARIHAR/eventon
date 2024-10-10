@@ -6,7 +6,7 @@
                     <h4 class=" mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius">Creators India</h4>
                     <p class="mb-4 text-center text-md-start" style="color: black;">
                         Join exciting events and showcase your skills! Compete in thrilling challenges, earn rewards, and climb the leaderboard.
-                        It's your time to shine – play, win, and get rewarded! Be a part of the community and experience the excitement like never before!
+                        It's your time to shine – play, win, and get rewarded! 
                       </p>
 
                     {{-- <div class="border border-primary p-3 rounded bg-light">

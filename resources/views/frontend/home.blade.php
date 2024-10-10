@@ -751,7 +751,7 @@
                             </div>
                             <div class="program-text bg-white px-4 pb-3">
                                 <div class="program-text-inner">
-                                    <a href="#" class="h4">Fun Science Experiments</a>
+                                    <a href="#" class="h4">Science Experiments</a>
 
                                 </div>
                             </div>
