@@ -44,6 +44,14 @@ class FormController extends Controller
 
         return redirect()->route('form.index')->with('success', 'Contact deleted successfully.');
     }
+    public function download($id)
+{
+    $participation = Form::findOrFail($id);
+    $filePath = public_path($participation->video); // Make sure this points to the correct video path
+
+    return response()->download($filePath);
+}
+
 
 
 }

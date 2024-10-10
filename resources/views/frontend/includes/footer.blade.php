@@ -6,7 +6,7 @@
                     <h4 class=" mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius">Creators India</h4>
                     <p class="mb-4 text-center text-md-start" style="color: black;">
                         Join exciting events and showcase your skills! Compete in thrilling challenges, earn rewards, and climb the leaderboard.
-                        It's your time to shine – play, win, and get rewarded! 
+                        It's your time to shine – play, win, and get rewarded!
                       </p>
 
                     {{-- <div class="border border-primary p-3 rounded bg-light">
@@ -42,12 +42,12 @@
                             334003</div>
                     <!-- Phone Number Link - opens dialer when clicked -->
 <a href="tel:+1234567890123" class="text-start rounded-0 text-body mb-4">
-    <i class="fa fa-phone-alt text-primary me-2"></i> (+012) 3456 7890 123
+    <i class="fa fa-phone-alt text-primary me-2"></i>
 </a>
 
 <!-- Email Link - opens email client when clicked -->
 <a href="mailto:contact@auricletechnologies.com" class="text-start rounded-0 text-body mb-4">
-    <i class="fas fa-envelope text-primary me-2"></i> creatorsindia.com
+    <i class="fas fa-envelope text-primary me-2"></i> creatorsindiahub@gmail.com
 </a>
 
                         <div class="footer-icon d-flex">

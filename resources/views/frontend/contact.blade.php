@@ -28,7 +28,7 @@
                         <i class="fas fa-envelope fa-2x text-primary me-4"></i>
                         <div class="">
                             <h4>Mail Us</h4>
-                            <p class="mb-2">creatorsindia.com</p>
+                            <p class="mb-2">creatorsindiahub@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                         <i class="fa fa-phone-alt fa-2x text-primary me-4"></i>
                         <div class="">
                             <h4>Telephone</h4>
-                            <p class="mb-2">34567890123</p>
+                            <p class="mb-2"></p>
                         </div>
                     </div>
                 </div>

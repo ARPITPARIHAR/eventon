@@ -83,12 +83,18 @@
                             <td>{{ $participation->number }}</td>
                             <td>{{ $participation->age }}</td>
                             <td>{{ $participation->category }}</td>
-                     <td>
-    <video width="90" controls>
-        <source src="{{ asset($participation->video) }}" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-</td>
+                            <td>
+                                <video width="90" controls>
+                                    <source src="{{ asset($participation->video) }}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="text-center mt-2">
+                                    <a href="{{ route('participations.download', $participation->id) }}" class="btn btn-primary" download>
+                                        <i class="feather icon-download"></i> Download Video
+                                    </a>
+                                </div>
+                            </td>
+
 
                             <td>{{ $participation->message }}</td>
                             <td>

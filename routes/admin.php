@@ -41,6 +41,7 @@ Route::controller(ContactController::class)->group(function () {
 Route::controller(FormController::class)->group(function () {
     Route::get('/form', 'index')->name('form.index');
     Route::delete('forms/{id}/delete', 'delete')->name('participations.delete');
+    Route::get('forms/{id}/download', 'download')->name('participations.download');
 });
 Route::get('/contact/index', [ContactController::class, 'index'])->name('contact.index');
 Route::delete('/contact/{id}', [ContactController::class, 'destroy'])->name('contact.destroy');
