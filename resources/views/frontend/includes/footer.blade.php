@@ -41,9 +41,9 @@
                             Bikaner (Rajasthan)
                             334003</div>
                     <!-- Phone Number Link - opens dialer when clicked -->
-<a href="tel:+1234567890123" class="text-start rounded-0 text-body mb-4">
-    <i class="fa fa-phone-alt text-primary me-2"></i>
-</a>
+
+    {{-- <i class="fa fa-phone-alt text-primary me-2"></i> --}}
+
 
 <!-- Email Link - opens email client when clicked -->
 <a href="mailto:contact@auricletechnologies.com" class="text-start rounded-0 text-body mb-4">

@@ -169,7 +169,7 @@
 </head>
 <body>
 
-<div class="container" style="width:100%; background-image:url('img/0.jpg')
+<div class="container" style="width:100%; background-color:rgb(253, 238, 187);
 ">
     <div class="row justify-content-center">)
         <div class="col-lg-8">'
@@ -241,7 +241,9 @@
            style="background-color: white;  color: black;">
 </div>
 
-
+<div class="progress" style="display:none;" id="uploadProgress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%;" id="progressBar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
                     <div class="form-group">
                         <label for="message">Additional Information:</label>
                         <textarea class="form-control" id="message"name="message" rows="4" placeholder="Any additional information or comments" required></textarea>
@@ -342,9 +344,68 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  document.getElementById('video').addEventListener('change', function() {
+    const file = this.files[0];
+
+    if (file) {
+        const formData = new FormData();
+        formData.append('video', file);
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', '/your-upload-route', true); // Replace with your upload route
+
+        // Show the progress bar
+        const uploadProgress = document.getElementById('uploadProgress');
+        const progressBar = document.getElementById('progressBar');
+        uploadProgress.style.display = 'block';
+
+        xhr.upload.onprogress = function(event) {
+            if (event.lengthComputable) {
+                const percentComplete = (event.loaded / event.total) * 100;
+                progressBar.style.width = percentComplete + '%';
+                progressBar.setAttribute('aria-valuenow', percentComplete);
+                progressBar.textContent = Math.round(percentComplete) + '%'; // Display percentage text
+            }
+        };
+
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                // Handle successful upload (show success message, etc.)
+                console.log('Upload successful!');
+                // Optionally reset the progress bar after successful upload
+                progressBar.style.width = '0%';
+                progressBar.textContent = '';
+                uploadProgress.style.display = 'none'; // Hide the progress bar
+            } else {
+                // Handle error
+                console.error('Upload failed:', xhr.responseText);
+                // Optionally show an error message
+            }
+        };
+
+        xhr.onerror = function() {
+            console.error('Request failed. Please try again.');
+            // Optionally show an error message
+        };
+
+        xhr.send(formData);
+    }
+});
+
 
 </script>
 <style>
+.progress {
+    height: 20px;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    background-color: #007bff; /* Bootstrap primary color */
+}
+
+
+
 .flash-message {
     display: none; /* Initially hidden */
     position: fixed;

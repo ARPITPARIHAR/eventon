@@ -14,7 +14,7 @@
                 <p class="mb-5" style="color:white;">If you have any query. feel free to text us</a>.</p>
             </div>
             <div class="row g-5 mb-5">
-                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                     <div class="d-flex w-100 border border-primary p-4 rounded bg-white">
                         <i class="fas fa-map-marker-alt fa-2x text-primary me-4"></i>
                         <div class="">
@@ -23,7 +23,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
                     <div class="d-flex w-100 border border-primary p-4 rounded bg-white">
                         <i class="fas fa-envelope fa-2x text-primary me-4"></i>
                         <div class="">
@@ -32,15 +32,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="d-flex w-100 border border-primary p-4 rounded bg-white">
-                        <i class="fa fa-phone-alt fa-2x text-primary me-4"></i>
-                        <div class="">
-                            <h4>Telephone</h4>
-                            <p class="mb-2"></p>
-                        </div>
-                    </div>
-                </div>
+
             </div>
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">

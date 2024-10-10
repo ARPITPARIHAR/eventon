@@ -9,7 +9,7 @@
 
                     <small class="me-3">
                         <i class="fas fa-envelope me-2" style="color: white;"></i>
-                        <a href="mailto:contact@auricletechnologies.com" class="text-white">creatorsindiahub@gmail.com -</a>
+                        <a href="mailto:contact@auricletechnologies.com" class="text-white">creatorsindiahub@gmail.com </a>
                     </small>
 
             </div>

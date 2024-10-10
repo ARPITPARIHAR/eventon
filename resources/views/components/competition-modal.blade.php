@@ -1,3 +1,4 @@
+<!-- Modal HTML -->
 <div id="competitionModal" class="modal">
     <div class="modal-content">
         <span class="close-button">&times;</span>
@@ -8,7 +9,7 @@
     </div>
 </div>
 
-
+<!-- CSS Styles -->
 <style>
     .modal {
         display: none; /* Hidden by default */
@@ -55,7 +56,6 @@
         text-decoration: none;
     }
 
-
     @media (max-width: 768px) {
         .modal-content h2 {
             font-size: 1.75rem; /* Smaller font size for tablets and phones */
@@ -75,19 +75,23 @@
             font-size: 0.8rem; /* Smaller paragraph font size */
         }
     }
+</style>
 
-
-    </style>
-
-
+<!-- JavaScript to Control Modal -->
 <script>
 // resources/js/app.js
 document.addEventListener('DOMContentLoaded', function() {
     var modal = document.getElementById('competitionModal');
     var closeButton = document.querySelector('.close-button');
 
-    // Show the modal
-    modal.style.display = "block";
+    // Check if the modal has been shown before
+    if (!localStorage.getItem('competitionModalShown')) {
+        // If not shown, display the modal
+        modal.style.display = "block";
+
+        // Set a flag in localStorage to indicate the modal has been shown
+        localStorage.setItem('competitionModalShown', 'true');
+    }
 
     // Close the modal when the user clicks on the close button
     closeButton.onclick = function() {
@@ -101,5 +105,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 });
-
 </script>
