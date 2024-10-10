@@ -6,7 +6,7 @@
 @section('content')
     @include('frontend.includes.slidebar')
 
-
+    @include('components.competition-modal')
 
         <!-- Google Web Fonts -->
 

@@ -52,7 +52,12 @@
 
     <div class="container table-container">
         <h3 class="my-4">Participation Table</h3>
-
+        <form method="GET" action="" class="mb-4">
+            <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Search by name, email, or Video category" value="{{ request()->input('search') }}">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </div>
+        </form>
         <!-- Adding table-responsive for responsiveness -->
         <div class="table-responsive">
             <table class="table table-striped table-bordered">

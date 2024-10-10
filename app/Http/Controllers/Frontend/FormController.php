@@ -49,7 +49,7 @@ class FormController extends Controller
             // dd($filePath);
 
             // Store the video path in the database
-            $buyer->video =    '/public/storage/' . $filePath;
+            $buyer->video =  '/public/storage/' . $filePath;
         }
 
         // Additional fields

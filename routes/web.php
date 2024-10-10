@@ -36,6 +36,8 @@ Route::controller(PageController::class)->group(function () {
 
     Route::get('abouts', 'about')->name('abouts');
     Route::get('hostel-facility', 'hostel_facility')->name('hostelservice');
+    Route::get('is-disclaimer', 'disclaimer')->name('is-disclaimer')->withoutMiddleware([isDisclaimer::class]);
+
 
 });
 
