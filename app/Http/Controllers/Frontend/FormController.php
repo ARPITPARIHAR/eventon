@@ -16,7 +16,7 @@ class FormController extends Controller
 
         // Create a new Form instance
         $buyer = new Form;
-
+        $buyer->user_id = auth()->id();
         // Assign request values to the Form model
         $buyer->name = $request->name;
         $buyer->email = $request->email;
@@ -32,28 +32,28 @@ class FormController extends Controller
             return back()->withErrors(['game_category' => 'Please select a category.']);
         }
 
-        if ($request->file('logo')) {
-            // Get original file name without extension
-            $originalName = pathinfo($request->file('logo')->getClientOriginalName(), PATHINFO_FILENAME);
+        // if ($request->file('logo')) {
+        //     // Get original file name without extension
+        //     $originalName = pathinfo($request->file('logo')->getClientOriginalName(), PATHINFO_FILENAME);
 
-            // Create a new file name by combining current timestamp and original name
-            $fileName = time() . '-logo-' . $originalName;
+        //     // Create a new file name by combining current timestamp and original name
+        //     $fileName = time() . '-logo-' . $originalName;
 
-            // Debugging to check the file name
-            // dd($fileName);
+        //     // Debugging to check the file name
+        //     // dd($fileName);
 
-            // Store the file and get the path
-            $filePath = $request->file('logo')->storeAs('uploads/video', $fileName, 'public');
+        //     // Store the file and get the path
+        //     $filePath = $request->file('logo')->storeAs('uploads/video', $fileName, 'public');
 
-            // Debugging to check the file path
-            // dd($filePath);
+        //     // Debugging to check the file path
+        //     // dd($filePath);
 
-            // Store the video path in the database
-            $buyer->video =  '/public/storage/' . $filePath;
-        }
+        //     // Store the video path in the database
+        //     $buyer->video =  '/public/storage/' . $filePath;
+        // }
 
         // Additional fields
-
+        $buyer->video = $request->logo;
         $buyer->message = $request->message;
 
         // Save the Form model

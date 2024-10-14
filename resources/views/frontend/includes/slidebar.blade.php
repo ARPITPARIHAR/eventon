@@ -13,7 +13,7 @@
                 <div class="button-container" style="margin-top: 20px;">
                     <a href="{{ route('form') }}" class="btn btn-prima">Participate</a>
 
-                    <a href="/" class="btn btn-prima">Login</a>
+                    <a href="/user-panel" class="btn btn-prima">Login</a>
                 </div>
             </div>
         </div>

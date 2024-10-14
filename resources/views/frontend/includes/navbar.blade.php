@@ -37,7 +37,7 @@
                     <a href="about" class="nav-item nav-link">About</a>
                     <a href="participate" class="nav-item nav-link">Participate</a>
                     <a href="programme" class="nav-item nav-link">OurProgrammes</a>
-                     <a href="youtubeform" class="nav-item nav-link">Events</a>
+                     {{-- <a href="youtubeform" class="nav-item nav-link">Events</a> --}}
 
 {{--
                     <div class="nav-item dropdown">

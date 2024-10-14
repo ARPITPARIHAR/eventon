@@ -171,7 +171,7 @@
 
 <div class="container" style="width:100%; background-color:rgb(253, 238, 187);
 ">
-    <div class="row justify-content-center">)
+    <div class="row justify-content-center">
         <div class="col-lg-8">'
             <div class="participation-form-container">
                 <h class="participation-form-heading">Participate & Win Amazing Rewards!</h>
@@ -234,19 +234,22 @@
 
 
 
-
 <div class="form-group">
-    <label for="video">Your Gaming Video:</label>
-    <input type="file" class="form-control" name="logo" id="video" placeholder="Gaming Video" required
-           style="background-color: white;  color: black;">
+    <label for="video">Your Gaming Video Link:</label>
+    <input type="text" class="form-control" name="video_link" id="video" placeholder="Enter Video Link" required
+           style="background-color: white; color: black;">
+
+           <!-- Button -->
+           <button id="openVideoPopup" class="btn btn-dark btn-sm" style="margin-top: 10px;"> How to Upload Videos on Google Drive</button>
+
 </div>
 
-<div class="progress" style="display:none;" id="uploadProgress">
+{{-- <div class="progress" style="display:none;" id="uploadProgress">
     <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%;" id="progressBar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
+</div> --}}
                     <div class="form-group">
-                        <label for="message">Additional Information:</label>
-                        <textarea class="form-control" id="message"name="message" rows="4" placeholder="Any additional information or comments" required></textarea>
+                        <label for="message">Refrenced By:</label>
+                        <textarea class="form-control" id="message"name="message" placeholder="your Refrencal name" required></textarea>
                     </div>
                     <button type="submit" class="participation-form-button">Submit & Participate</button>
                 </form>
@@ -254,7 +257,22 @@
         </div>
     </div>
 </div>
-
+<div id="videoPopup" class="popup" style="display: none;">
+    <div class="popup-content">
+      <span id="closePopup" class="close">&times;</span>
+      <h4>How to Upload Videos to Google Drive and Get the Link</h4>
+      <ol>
+        <li>Open Google Drive and sign in to your Google account.</li>
+        <li>Click on the "+ New" button on the left side and select "File upload".</li>
+        <li>Choose the video file you want to upload from your computer.</li>
+        <li>Wait for the video to finish uploading. Once done, locate it in your Drive.</li>
+        <li>Right-click on the video file, then select "Get link".</li>
+        <li>In the popup, set the sharing permissions to "Anyone with the link" and click "Copy link".</li>
+        <li>Click "Done" to close the sharing popup. Now you can share the copied link.</li>
+      </ol>
+      <p>Follow these steps to easily share videos with anyone using Google Drive!</p>
+    </div>
+  </div>
 
 @if(session('success'))
 <div id="flashMessage" class="flash-message">
@@ -266,7 +284,26 @@
 </div>
 @endif
 
+<script>
+// Show the popup when the button is clicked
+document.getElementById("openVideoPopup").onclick = function() {
+  document.getElementById("videoPopup").style.display = "block";
+}
 
+// Close the popup when the close button is clicked
+document.getElementById("closePopup").onclick = function() {
+  document.getElementById("videoPopup").style.display = "none";
+}
+
+// Close the popup when clicking outside of it
+window.onclick = function(event) {
+  var popup = document.getElementById("videoPopup");
+  if (event.target == popup) {
+    popup.style.display = "none";
+  }
+}
+
+</script>
 
 <script>
     document.getElementById('game_category').addEventListener('change', function () {
@@ -395,16 +432,115 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </script>
 <style>
-.progress {
-    height: 20px;
-    margin-top: 10px;
+
+/* Popup container */
+/* Popup container */
+
+
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
-.progress-bar {
-    background-color: #007bff; /* Bootstrap primary color */
+/* Popup content */
+.popup-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 8px;
+  width: 50%;
+  max-width: 600px;
+  position: relative;
+  text-align: left;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.4s ease;
 }
 
+/* Close button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
 
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Styling for list */
+.popup-content h2 {
+  color: #007bff;
+  text-align: center;
+}
+
+.popup-content ol {
+  padding-left: 20px;
+}
+
+.popup-content li {
+
+  font-size: 16px;
+  color:rgb(174, 20, 20);
+  font-family: cursive;
+}
+
+.popup-content p {
+  margin: 10px 0;
+  font-size: 14px;
+  color:black;
+}
+
+/* Styling for list */
+
+@media (max-width: 768px) {
+  .popup-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .popup-content h2 {
+    font-size: 1.5em;
+  }
+
+  .popup-content li {
+    font-size: 14px;
+  }
+
+  .close {
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-content {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .popup-content h2 {
+    font-size: 1.2em;
+  }
+
+  .popup-content li {
+    font-size: 12px;
+  }
+}
 
 .flash-message {
     display: none; /* Initially hidden */

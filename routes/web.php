@@ -5,13 +5,14 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\UserController;
+
 use Illuminate\Support\Facades\Response;
-
 use App\Http\Controllers\LoginController;
+
+
+
 use App\Http\Controllers\YouTubeController;
-
-
-
 use App\Http\Controllers\FileDownloadController;
 use App\Http\Controllers\Frontend\FormController;
 use App\Http\Controllers\Frontend\ContactController;
@@ -42,6 +43,11 @@ Route::controller(PageController::class)->group(function () {
 });
 
 // routes/web.php
+// web.php
+Route::get('/user-panel', [UserController::class, 'showUserPanel'])->middleware('auth')->name('user.panel');
+Route::get('/user/forms/{form}/edit', [UserController::class, 'editForm'])->name('user.edit'); // Edit form
+Route::put('/user/forms/{form}', [UserController::class, 'updateForm'])->name('user.update'); // Update form
+Route::delete('/user/forms/{form}', [UserController::class, 'destroyForm'])->name('user.destroy'); 
 
 Route::get('youtubeform', [YouTubeController::class, 'showForm']);
 Route::get('youtube', [YouTubeController::class, 'show']);
