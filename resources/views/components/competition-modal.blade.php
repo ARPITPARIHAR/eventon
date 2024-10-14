@@ -52,6 +52,8 @@
 <body>
 
     <!-- Your Content Here -->
+    <h1>Welcome to Your Website!</h1>
+    <p>This is your home page content.</p>
 
     <!-- Modal HTML -->
     <div id="competitionModal" class="modal">
@@ -71,29 +73,36 @@
             </p>
         </div>
     </div>
-
+<script>
     <!-- JavaScript to Control Modal -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var modal = document.getElementById('competitionModal');
-            var closeButton = document.querySelector('.close-button');
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('competitionModal');
+        const closeButton = document.querySelector('.close-button');
 
-            // Show the modal unconditionally for testing
-            modal.style.display = "block";
+        // **Persist modal state in local storage (optional):**
+        const hasSeenModal = localStorage.getItem('hasSeenCompetitionModal');
 
-            // Close the modal when the user clicks on the close button
-            closeButton.onclick = function() {
-                modal.style.display = "none";
-            };
+        // Show the modal only if it hasn't been seen before (or if local storage is unavailable)
+        if (!hasSeenModal) {
+          modal.style.display = "block";
+        }
 
-            // Close the modal when the user clicks anywhere outside of the modal
-            window.onclick = function(event) {
-                if (event.target === modal) {
-                    modal.style.display = "none";
-                }
-            };
-        });
-    </script>
+        // Close the modal when the user clicks on the close button
+        closeButton.onclick = function() {
+          modal.style.display = "none";
+          // **Optional: Update local storage to prevent future display:**
+          localStorage.setItem('hasSeenCompetitionModal', true);
+        };
 
+        // Close the modal when the user clicks anywhere outside of the modal (if enabled)
+        window.onclick = function(event) {
+          if (event.target === modal) {
+            modal.style.display = "none";
+            // **Optional: Update local storage to prevent future display:**
+            localStorage.setItem('hasSeenCompetitionModal', true);
+          }
+        };
+      });
+</script>
 </body>
 </html>
