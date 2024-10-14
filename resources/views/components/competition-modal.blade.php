@@ -1,13 +1,11 @@
-<!-- resources/views/home.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Site Title</title>
+    <title>Your Website Title</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <style>
-        /* Modal CSS */
         .modal {
             display: none; /* Hidden by default */
             position: fixed; /* Stay in place */
@@ -30,46 +28,39 @@
             border-radius: 8px; /* Optional: adds rounded corners */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: adds shadow for depth */
         }
-
-        .close-button {
-            position: absolute; /* Position it absolutely */
-            top: 10px; /* Adjust top position */
-            right: 10px; /* Adjust right position */
-            color: black;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer; /* Change cursor to pointer */
-        }
     </style>
 </head>
 <body>
-    <!-- Your other content here -->
+
+    <!-- Your Content Here -->
 
     <!-- Modal HTML -->
     <div id="competitionModal" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
-            <h2 style="text-align: center; font-size: 2.25rem; color: rgba(176, 9, 9, 0.836); margin: 0; font-weight: bold;">Creators India YouTube Video Diwali Competition 2024</h2>
-            <p style="text-align: justify; font-size: 1.0rem; color: black;">Join us for our exciting Creators India YouTube Video Diwali Competition 2024! 🎆✨ In this Competition, we celebrate the spirit of Diwali with multiple categories showcasing the incredible creativity and talent of our participants.</p>
-            <p style="text-align: justify; font-size: 1.0rem; color: black;">🕯️ Join the Festivities: Immerse yourself in the joy of Diwali and celebrate with us! Don't forget to like, share, and subscribe for more festive content, updates, and to find out who takes home the top prizes!</p>
-            <p style="text-align: justify; font-size: 1.0rem; color: black;">🎉 Winners Announcement: Stay tuned until the end for the exciting winners announcement and a special surprise!</p>
+            <h2 style="text-align: center; font-size: 2.25rem; color: rgba(176, 9, 9, 0.836); margin: 0; font-weight: bold;">
+                Creators India YouTube Video Diwali Competition 2024
+            </h2>
+            <p style="text-align: justify; font-size: 1.0rem; color: black;">
+                Join us for our exciting Creators India YouTube Video Diwali Competition 2024! 🎆✨ In this Competition, we celebrate the spirit of Diwali with multiple categories showcasing the incredible creativity and talent of our participants.
+            </p>
+            <p style="text-align: justify; font-size: 1.0rem; color: black;">
+                🕯️ Join the Festivities: Immerse yourself in the joy of Diwali and celebrate with us! Don't forget to like, share, and subscribe for more festive content, updates, and to find out who takes home the top prizes!
+            </p>
+            <p style="text-align: justify; font-size: 1.0rem; color: black;">
+                🎉 Winners Announcement: Stay tuned until the end for the exciting winners announcement and a special surprise!
+            </p>
         </div>
     </div>
 
-    <script src="{{ asset('js/app.js') }}"></script>
+    <!-- JavaScript to Control Modal -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var modal = document.getElementById('competitionModal');
             var closeButton = document.querySelector('.close-button');
 
-            // Check if the modal has been shown before
-            if (!localStorage.getItem('competitionModalShown')) {
-                // If not shown, display the modal
-                modal.style.display = "block";
-
-                // Set a flag in localStorage to indicate the modal has been shown
-                localStorage.setItem('competitionModalShown', 'true');
-            }
+            // Show the modal unconditionally for testing
+            modal.style.display = "block";
 
             // Close the modal when the user clicks on the close button
             closeButton.onclick = function() {
@@ -84,5 +75,6 @@
             };
         });
     </script>
+
 </body>
 </html>
