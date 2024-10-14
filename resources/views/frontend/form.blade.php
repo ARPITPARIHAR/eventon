@@ -264,7 +264,7 @@
       <ol>
         <li>Open Google Drive and sign in to your Google account.</li>
         <li>Click on the "+ New" button on the left side and select "File upload".</li>
-        <li>Choose the video file you want to upload from your computer.</li>
+        <li>Choose the video file you want to upload from your computer or mobile.</li>
         <li>Wait for the video to finish uploading. Once done, locate it in your Drive.</li>
         <li>Right-click on the video file, then select "Get link".</li>
         <li>In the popup, set the sharing permissions to "Anyone with the link" and click "Copy link".</li>

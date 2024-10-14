@@ -27,6 +27,25 @@
             max-width: 800px; /* Set a maximum width for large screens */
             border-radius: 8px; /* Optional: adds rounded corners */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: adds shadow for depth */
+            position: relative; /* Position relative for close button positioning */
+        }
+
+        .close-button {
+            color: #aaa; /* Default color */
+            position: absolute; /* Position absolute to place it relative to modal */
+            top: 10px; /* Adjust to desired vertical position */
+            right: 20px; /* Adjust to desired horizontal position */
+            font-size: 28px; /* Size of the close button */
+            font-weight: bold; /* Bold text */
+            cursor: pointer; /* Hand cursor on hover */
+            transition: color 0.3s; /* Transition effect for color */
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: #000; /* Color on hover */
+            text-decoration: none; /* Remove underline */
+            cursor: pointer; /* Hand cursor */
         }
     </style>
 </head>
@@ -37,7 +56,7 @@
     <!-- Modal HTML -->
     <div id="competitionModal" class="modal">
         <div class="modal-content">
-            <span class="close-button">&times;</span>
+            <span class="close-button" aria-label="Close">&times;</span>
             <h2 style="text-align: center; font-size: 2.25rem; color: rgba(176, 9, 9, 0.836); margin: 0; font-weight: bold;">
                 Creators India YouTube Video Diwali Competition 2024
             </h2>
